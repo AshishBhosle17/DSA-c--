@@ -17,3 +17,44 @@ int countDigits(int n){
     return count;	
 }
 
+//Palindrome 
+
+bool palindrome(int n) {
+    int revNum = 0;
+    int dup = n;
+
+    while (n > 0) {
+        int ld = n % 10;
+        revNum = (revNum * 10) + ld;
+        n = n / 10;
+    }
+
+    if (dup == revNum) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Check Prime
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cin >> n;
+	int cnt =0;
+	for(int i=1;i*i<=n;i++) {
+          if (n % i == 0) {
+            cnt++;
+            if ((n / i) != i)
+              cnt++;
+          }
+        }
+        if (cnt == 2)
+          cout << "true";
+        else
+          cout << "false";
+}
