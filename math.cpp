@@ -58,3 +58,17 @@ int main() {
         else
           cout << "false";
 }
+
+// Reverse a Number - Moderate Level (need to revisit)
+
+unsigned int reverseBits(unsigned int n) {
+    unsigned int rev = 0;
+    for (int i = 0; i < 32; i++) {
+        rev <<= 1;
+        if (n & 1)
+            rev |= 1;
+        n >>= 1;
+    }
+    return rev;
+}
+
